@@ -62,8 +62,27 @@ class matrix
         fw.close(); //zamykamy plik
     }
 
+    public void czytajzPliku()
+            throws IOException
+    {
+        System.out.println();
+        System.out.println("\nOdczytujemy tablicę B z pliku dane.txt\n");
 
-}
+        FileReader fr = new FileReader("dane.txt");
+        BufferedReader br = new BufferedReader(fr);
+
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                c[i][j] = (int) br.read(); //odczytujemy dane z pliku i rzutujemy
+                System.out.print(c[i][j] + "\t");
+            }//j
+            System.out.println();
+        }//i
+        fr.close(); //zamykamy plik
+    }
+} //koniec klasy matrix
 public class Main {
     public static void main(String[] args)
         throws IOException
@@ -73,5 +92,6 @@ public class Main {
         matrix1.czytajDane();
         matrix1.przetworzDane();
         matrix1.zapiszdoPliku();
+        matrix1.czytajzPliku();
     }
 }
