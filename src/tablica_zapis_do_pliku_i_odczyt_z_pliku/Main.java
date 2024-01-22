@@ -42,6 +42,27 @@ class matrix
         }
     }
 
+    public void zapiszdoPliku()
+        throws IOException
+    {
+        System.out.println();
+        System.out.println("\nZapisujemy tablice B do pliku dane.txt\n");
+
+        FileWriter fw = new FileWriter("dane.txt"); //tworzymy i otwieramy plik do zapisu dane.txt
+
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                fw.write((char)(b[i][j])); //rzutujemy i zapisujemy tablice B do pliku
+                System.out.print(b[i][j] + "\t");
+            }//j
+            System.out.println();
+        }//i
+        fw.close(); //zamykamy plik
+    }
+
+
 }
 public class Main {
     public static void main(String[] args)
@@ -51,5 +72,6 @@ public class Main {
 
         matrix1.czytajDane();
         matrix1.przetworzDane();
+        matrix1.zapiszdoPliku();
     }
 }
