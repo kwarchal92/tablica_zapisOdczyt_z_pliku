@@ -25,6 +25,23 @@ class matrix
         }//i
     }
 
+    public void przetworzDane()
+            throws IOException
+    {
+        System.out.println();
+        System.out.println("\nPrzepisujemy zawartość tablicy A do tablicy B:\n");
+
+        for (i = 0; i < n; i++)
+        {
+            for (j = 0; j < n; j++)
+            {
+                b[i][j] = a[j][i]; //przepisujemy tablice zgodnie z poleceniem
+                System.out.print(b[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
+
 }
 public class Main {
     public static void main(String[] args)
@@ -33,5 +50,6 @@ public class Main {
         matrix matrix1 = new matrix();
 
         matrix1.czytajDane();
+        matrix1.przetworzDane();
     }
 }
